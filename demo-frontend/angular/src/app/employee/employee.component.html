@@ -1,0 +1,32 @@
+<div class="card">
+    <table class="table table-hover-cells table-striped">
+        <thead class="table-inverse">
+              <tr>
+                  <th>ID</th>
+                  <th>FIRST NAME</th>
+                  <th>LAST NAME</th>
+                  <th>ADDRESS</th>
+                  <th>SALARY</th>
+              </tr>
+        </thead>
+        <tbody>
+            <div *ngFor="let employee of employees" (click)="select(employee)">
+        <tr> 
+          <td>{{employee.id}}</td>
+          <td>{{employee.firstName}}</td>
+          <td>{{employee.lastName}}</td>
+          <td>{{employee.address}}</td>
+          <td>{{employee.salary}}</td>
+        
+        </tr>
+      </div>
+        </tbody>
+      
+      </table>
+
+
+      <div *ngIf="selectedEmployee">
+          <app-employee-details [employee]="selectedEmployee"></app-employee-details>
+      </div>
+      
+    </div>
